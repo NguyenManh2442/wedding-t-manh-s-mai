@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
     "cloud:login": "cloudbase login",
     "cloud:dist-front": "cloudbase hosting:deploy dist / -e elvinn-1aa07a",
     "cloud:dist-funcs": "cloudbase functions:deploy addBarrage  -e elvinn-1aa07a && cloudbase functions:deploy getBarrage  -e elvinn-1aa07a",
