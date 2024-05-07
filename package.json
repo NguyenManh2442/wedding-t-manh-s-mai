@@ -1,0 +1,54 @@
+{
+  "name": "wedding-invitation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "cloud:login": "cloudbase login",
+    "cloud:dist-front": "cloudbase hosting:deploy dist / -e elvinn-1aa07a",
+    "cloud:dist-funcs": "cloudbase functions:deploy addBarrage  -e elvinn-1aa07a && cloudbase functions:deploy getBarrage  -e elvinn-1aa07a",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "firebase": "^10.11.1",
+    "prismjs": "^1.15.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@cloudbase/cli": "^0.7.2",
+    "@vue/cli-plugin-babel": "^3.1.0",
+    "@vue/cli-plugin-eslint": "^3.1.0",
+    "@vue/cli-service": "^3.12.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
