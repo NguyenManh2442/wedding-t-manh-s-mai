@@ -5,11 +5,13 @@
         <div class="cover-content" :class="{ 'invitation-up': isOpening }">
           <div class="content-inside">
             <img class="content-inside-photo" src="../images/photo.jpg">
-            <p>Trân trọng kính mời!</p>
-            <p>--------Bạn--------</p>
+            <p><b>Trân trọng kính mời!</b></p>
+            <p>.......{{ nameInvitation }}.......</p>
             <p>Tới dự lễ thành hôn của chúng tôi!</p>
             <p><b>Tiến Mạnh 🐱 & 🐯 Sao Mai</b></p>
-
+            <p>Vào lúc 15:00 ngày 07/09/2024</p>
+            <p><b>{{ location }}</b></p>
+            <p>{{ address }}</p>
             <div class="content-inside-bless">
               <input placeholder="Nhập tên bạn" @focus="isFocused = true" @blur="isFocused = false, hasEntered = false"
                 v-model="form.name" ref="nameInput">
@@ -43,6 +45,9 @@ export default {
         name: '',
         message: '',
       },
+      nameInvitation: 'Bạn',
+      location: '',
+      address: '',
       isOpening: false,
       isFocused: false,
       hasEntered: false,
@@ -52,6 +57,23 @@ export default {
   methods: {
     openInvitation() {
       this.isOpening = true
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get('name');
+      const location = urlParams.get('l');
+
+      if (location) {
+        if (location == 't') {
+          this.location = "Tại tư gia nhà trai";
+          this.address = "Chản Làng - Yên Sơn - Lục Nam - Bắc Giang";
+        } else if (location == 'g') {
+          this.location = "Tại tư gia nhà gái";
+          this.address = "Nội Chùa - Yên Sơn - Lục Nam - Bắc Giang";
+        }
+      }
+      if (name) {
+        this.nameInvitation = name;
+        this.form.name = name;
+      }
     },
     closeInvitation() {
       this.isOpening = false
