@@ -13,11 +13,12 @@
             <p><b>{{ location }}</b></p>
             <p>{{ address }}</p>
             <div class="content-inside-bless">
+              <br>
+              <p>Gửi lời chúc tốt đẹp của bạn:</p>
               <input placeholder="Nhập tên bạn" @focus="isFocused = true" @blur="isFocused = false, hasEntered = false"
                 v-model="form.name" ref="nameInput">
               <input placeholder="Viết lời chúc phúc của bạn" @keyup.enter="sendBarrage"
                 @blur="isFocused = false, hasEntered = false" v-model="form.message" ref="wishInput">
-              <p v-if="(!form.message || !form.name) && isFocused && hasEntered">Gửi lời chúc tốt đẹp của bạn</p>
               <div>
                 <button @click="sendBarrage">Gửi lời chúc</button>
                 <button @click="closeInvitation">Cancel</button>
@@ -289,7 +290,7 @@ export default {
       .cover-inside-seal {
         position: absolute;
         left: 70%;
-        bottom: 100px;
+        bottom: 125px;
         width: 80px;
         height: 80px;
         margin-left: -40px;
