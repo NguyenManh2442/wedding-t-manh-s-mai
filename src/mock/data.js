@@ -20,7 +20,8 @@ export default {
   code:
     `
 // I'm in a good mood today
-// I'll write the code for our love affair
+// I'll write the code for
+// our love affair
 // I'm going to start writing
 const { ${BOY}, ${GIRL} } = 🇻🇳;
 (${BOY}, ${GIRL}).Meet('${moment(DATE_MAP.MEET).format('YYYY-MM-DD HH:m:s')}');
@@ -38,7 +39,7 @@ ${GIRL}.response('Yes, I do！');
 (${BOY}, ${GIRL}).SendInvitation('${moment(DATE_MAP.SEND_INVITATION).format('YYYY-MM-DD')}');
 
 // Okay, I've finished writing
-// I'm going to start running`,
+// I'm going to start running `,
   executions: [{
     name: 'Initialization',
     time: '',

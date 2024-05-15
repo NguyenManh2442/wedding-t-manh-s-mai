@@ -11,9 +11,8 @@
             <p><b>Tiến Mạnh 🐱 & 🐯 Sao Mai</b></p>
             <p>Vào lúc 15:00 ngày 07/09/2024</p>
             <p><b>{{ location }}</b></p>
-            <p>{{ address }}</p>
+            <p><a :href="linkAddress" target="_blank">{{ address }}</a></p>
             <div class="content-inside-bless">
-              <br>
               <p>Gửi lời chúc tốt đẹp của bạn:</p>
               <input placeholder="Nhập tên bạn" @focus="isFocused = true" @blur="isFocused = false, hasEntered = false"
                 v-model="form.name" ref="nameInput">
@@ -49,6 +48,7 @@ export default {
       nameInvitation: 'Bạn',
       location: '',
       address: '',
+      linkAddress: '',
       isOpening: false,
       isFocused: false,
       hasEntered: false,
@@ -66,9 +66,11 @@ export default {
         if (location == 't') {
           this.location = "Tại tư gia nhà trai";
           this.address = "Chản Làng - Yên Sơn - Lục Nam - Bắc Giang";
+          this.linkAddress = "https://maps.app.goo.gl/EuT7r1MZduq4Zz4RA";
         } else if (location == 'g') {
           this.location = "Tại tư gia nhà gái";
           this.address = "Nội Chùa - Yên Sơn - Lục Nam - Bắc Giang";
+          this.linkAddress = "https://maps.app.goo.gl/d6NHXMLH8NoDa6bn7";
         }
       }
       if (name) {
@@ -175,6 +177,10 @@ export default {
             margin-bottom: 10px;
             padding: 5px;
             border: 1px solid #f7debb;
+          }
+
+          a {
+            color: #c49453;
           }
 
           p {
