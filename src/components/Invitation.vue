@@ -44,6 +44,7 @@ export default {
       form: {
         name: '',
         message: '',
+        timestamp: new Date().getTime(),
       },
       nameInvitation: 'Bạn',
       location: '',

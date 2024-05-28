@@ -23,7 +23,6 @@
 </template>
 
 <script>
-/*global tcb*/
 import { getDocs, collection, query, addDoc } from "firebase/firestore";
 import db from "../mock/main.js";
 
@@ -110,7 +109,8 @@ export default {
       // data to send
       const dataObj = {
         name: this.form.name,
-        message: this.form.message
+        message: this.form.message,
+        timestamp: this.form.timestamp
       }
 
       // create document and return reference to it
